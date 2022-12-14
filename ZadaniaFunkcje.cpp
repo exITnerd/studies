@@ -1,6 +1,3 @@
-﻿// ZadaniaFunkcje.cpp : Ten plik zawiera funkcję „main”. W nim rozpoczyna się i kończy wykonywanie programu.
-//
-
 #include <iostream>
 //zmienna gobalna 
 int n = 0;
@@ -49,17 +46,11 @@ int _LiczbaNieujemna()
     }
     return n;
 }
-/*
+
 void ZAD3()
 {
-    int k = 0;
-    for (int n = 1; n > k; n++)
-    {
-
-    }
-    //n/k k<n
+    
 }
-*/
 
 void ZAD4(int n)
 {
