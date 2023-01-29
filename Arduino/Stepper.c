@@ -32,13 +32,13 @@ void zadanie(long szybkosc, int direction) {
     if (currentMillis - previousMillis >= interval) {
         previousMillis = currentMillis;
         int index;
-if (tryb == 0) {
-    index = Step % 4 * 2;
-} else if (tryb == 1) {
-    index = (Step % 4) * 2 + 1;
-} else {
-    index = Step % 8;
-}
+    if (tryb == 0) {
+        index = Step % 4 * 2;
+    } else if (tryb == 1) {
+        index = (Step % 4) * 2 + 1;
+    } else {
+        index = Step % 8;
+    }
         if(kierunek == -1) {
             index = (index + lengthSeq - 1) % lengthSeq;
         }
