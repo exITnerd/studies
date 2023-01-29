@@ -1,3 +1,4 @@
+//To use it, change the file format to .ino instead of C/C++!
 #define IN1 8
 #define IN2 9
 #define IN3 10
