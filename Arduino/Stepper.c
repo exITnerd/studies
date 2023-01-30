@@ -8,9 +8,9 @@ unsigned long previousMillis = 0;
 long interval;
 
 int Step = 0;
-int tryb = 0; //0 - falowy, 1 - pełnokrokowy, 2 - półkrokowy
-int szybkosc = 10; //dowolna wartosc wedle uznania uzytkownika
-int kierunek = 1; // 1 = zgodnie z ruchem wskazowek zegara -1 = przeciwnie do ruchu wskazowek zegara
+int tryb;
+long szybkosc;
+int kierunek;
 
 const int lengthSeq = 8;
 int stepsMatrix[lengthSeq][4] = {
@@ -24,8 +24,8 @@ int stepsMatrix[lengthSeq][4] = {
   {1, 0, 0, 1},  // 7
 };
 
-void zadanie(long szybkosc, int direction) {
-    long a = 64 * szybkosc; // ilość ząbków razy okrażenia na minutę - kroki na minutę
+void zadanie(int tryb, long szybkosc, int kierunek) {
+    long a = 64 * szybkosc; // ilość ząbków razy szybkosc na minutę - kroki na minutę
     long b = a / 60; // ilosc kroków na sekundę
     interval = 1000 / b;  // odstęp pomiędzy krokami w sekundzie
 
@@ -56,8 +56,4 @@ void setup() {
     pinMode(IN2, OUTPUT);
     pinMode(IN3, OUTPUT);
     pinMode(IN4, OUTPUT);
-}
-
-void loop() {
-    zadanie(szybkosc, kierunek);
 }
