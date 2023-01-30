@@ -12,6 +12,8 @@ long szybkosc;
 int kierunek;
 int liczbaKrokow;
 int wykonaneKroki = 0;
+float liczbaObrotow;
+float wykonaneObroty = 0;
 
 const int lengthSeq = 8;
 int stepsMatrix[lengthSeq][4] = {
@@ -25,12 +27,16 @@ int stepsMatrix[lengthSeq][4] = {
   {1, 0, 0, 1},  // 7
 };
 
-void zadanie(int tryb, long szybkosc, int kierunek, int liczbaKrokow) {
+void zadanie(int tryb, long szybkosc, int kierunek, int liczbaKrokow, float liczbaObrotow) {
+    liczbaKrokow = liczbaObrotow*liczbaKrokow;
     long a = 64 * szybkosc; // ilość ząbków razy szybkosc na minutę - kroki na minutę
     long b = a / 60; // ilosc kroków na sekundę
     interval = 1000 / b;  // odstęp pomiędzy krokami w sekundzie
 
     if (wykonaneKroki >= liczbaKrokow) {
+      return;
+    }
+    if (wykonaneObroty >= liczbaObrotow) {
       return;
     }
     unsigned long currentMillis = millis();
@@ -52,6 +58,7 @@ void zadanie(int tryb, long szybkosc, int kierunek, int liczbaKrokow) {
         digitalWrite(IN3, stepsMatrix[index][2]);
         digitalWrite(IN4, stepsMatrix[index][3]);
         Step += kierunek;
+        
         if (tryb == 0){
           wykonaneKroki+=2;
         }
@@ -60,6 +67,9 @@ void zadanie(int tryb, long szybkosc, int kierunek, int liczbaKrokow) {
         }
         else{
           wykonaneKroki++;
+        }
+        if (wykonaneKroki == 4096){
+          wykonaneObroty == 1;
         }
     }
 }
@@ -72,10 +82,10 @@ void setup() {
 }
 
 void loop() {
-    //Wywolanie funkcji - parametry to od lewej:
-    //tryb: 0 - falowy, 1 - pełnokrokowy, 2 - półkrokowy
-    //szybkosc: dowolna wartosc wedle uznania uzytkownika
-    //kierunek: 1 = zgodnie z ruchem wskazowek zegara -1 = przeciwnie do ruchu wskazowek zegara
-    //liczbaKrokow: dowolna wartosc wedle uznania uzytkownika !!!Pelny obrot to 4096 krokow!!!
-    zadanie(2, 300, -1, 1024);
+   //tryb: 0 - falowy, 1 - pełnokrokowy, 2 - półkrokowy
+   //szybkosc: dowolna wartosc wedle uznania uzytkownika
+   //kierunek: 1 = zgodnie z ruchem wskazowek zegara -1 = przeciwnie do ruchu wskazowek zegara
+   //liczbaKrokow: dowolna wartosc wedle uznania uzytkownika !!!Pelny obrot to 4096 krokow!!!
+   //liczbaObrotow: dowolna wartosc wedle uznania uzytkownika
+    zadanie(2, 300, -1, 4096, 2.5);
 }
