@@ -9,4 +9,4 @@ int main()
     scanf_s("%f", &liczbawymierna);
     printf("Ta liczba z dokładnością do 2 liczb po przecinku to %.2f\n", liczbawymierna);
 }
-    //Aby uzyskać zaokrąglenie do innej liczby, wystarczy zmienić liczbę po prawej stronie ---> %.2f\n
+    //Aby uzyskać zaokrąglenie do innej liczby, wystarczy zmienić liczbę po prawej stronie ---> %.2f\n.
