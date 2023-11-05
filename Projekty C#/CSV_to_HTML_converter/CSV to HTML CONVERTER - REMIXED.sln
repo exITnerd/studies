@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSV to HTML CONVERTER - REMIXED", "CSV to HTML CONVERTER - REMIXED.csproj", "{37C40932-04BE-45A0-BD3D-DC2113223D1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37C40932-04BE-45A0-BD3D-DC2113223D1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37C40932-04BE-45A0-BD3D-DC2113223D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37C40932-04BE-45A0-BD3D-DC2113223D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37C40932-04BE-45A0-BD3D-DC2113223D1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC5628D0-79D2-4825-8799-0AC1885925F7}
+	EndGlobalSection
+EndGlobal
